@@ -12,6 +12,7 @@ const imgs = [ShoeThumbnail1, ShoeThumbnail2, ShoeThumbnail3, ShoeThumbnail4];
 export default function MainPage() {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
+  const [price, setPrice] = useState(125);
 
   const openZoom = (index) => {
     setSelectedSlide(index);
@@ -66,8 +67,31 @@ export default function MainPage() {
       )}
       <main>
         <section>
-          <div className="tittle">
-            <h2></h2>
+          <div className="tittle px-6">
+            <h3 className="mt-[24px] mb-[19px] text-[#FF7E1B] font-[Kumbh_Sans] text-[12px] not-italic font-bold leading-[normal] tracking-[1.846px] uppercase">
+              Sneaker Company
+            </h3>
+            <h2 className="mb-[15px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[32px]">
+              Fall Limited Edition Sneakers
+            </h2>
+            <p className="text-[#69707D] font-[Kumbh_Sans] text-[15px] not-italic font-normal leading-[25px]">
+              These low-profile sneakers are your perfect casual wear companion.
+              Featuring a durable rubber outer sole, they’ll withstand
+              everything the weather can offer.
+            </p>
+            <div className="price flex flex-row items-center">
+              <h2 className="mt-[10px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[normal]">
+                ${price.toFixed(2)}
+              </h2>
+              <div className="ml-[16px] mt-[13px] rounded-[6px] bg-[#FFEEE2] w-[51px] h-[27px] flex-shrink-0 flex items-center justify-center">
+                <h2 className="text-[#FF7E1B] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[normal]">
+                  50%
+                </h2>
+              </div>
+              <p className="text-decoration: line-through text-[#B6BCC8] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px] mt-[15px] ml-[90px]">
+                $250.00
+              </p>
+            </div>
           </div>
         </section>
       </main>
