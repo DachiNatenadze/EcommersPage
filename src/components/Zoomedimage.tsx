@@ -64,7 +64,7 @@ export default function Zoomedimage({ isOpen, selectedSlide, closeModal }) {
               className={`w-16 h-16 object-cover m-2 cursor-pointer ${
                 currentSlide === index ? "border-2 border-orange-500" : ""
               }`}
-              src={img}
+              src={img} 
               alt={`Thumbnail ${index + 1}`}
               onClick={() => setCurrentSlide(index)}
             />

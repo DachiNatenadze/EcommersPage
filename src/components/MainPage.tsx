@@ -96,7 +96,6 @@ export default function MainPage() {
           </div>
         </section>
       </main>
-      <PriceCalc price={price} setPrice={setPrice} />
     </>
   );
 }
