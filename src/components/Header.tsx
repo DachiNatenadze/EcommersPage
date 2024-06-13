@@ -5,6 +5,7 @@ import CartImg from "/public/icon-cart.svg";
 import avatar from "/public/image-avatar.png";
 import MainPage from "./MainPage";
 
+
 export default function Header() {
   return (
     <>
