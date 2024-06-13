@@ -6,6 +6,7 @@ import ShoeThumbnail4 from "/public/image-product-4.jpg";
 import previous from "/public/icon-previous.svg";
 import NextPic from "/public/icon-next.svg";
 import Zoomedimage from "./Zoomedimage";
+import PriceCalc from "./PriceCalc";
 
 const imgs = [ShoeThumbnail1, ShoeThumbnail2, ShoeThumbnail3, ShoeThumbnail4];
 
@@ -79,22 +80,23 @@ export default function MainPage() {
               Featuring a durable rubber outer sole, they’ll withstand
               everything the weather can offer.
             </p>
-            <div className="price flex flex-row items-center">
-              <h2 className="mt-[10px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[normal]">
-                ${price.toFixed(2)}
-              </h2>
-              <div className="ml-[16px] mt-[13px] rounded-[6px] bg-[#FFEEE2] w-[51px] h-[27px] flex-shrink-0 flex items-center justify-center">
-                <h2 className="text-[#FF7E1B] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[normal]">
+            <div className="price flex flex-row items-center justify-between">
+              <div className="flex flex-row items-end">
+                <h2 className="mt-[10px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[normal]">
+                  ${price.toFixed(2)}
+                </h2>
+                <h2 className="text-[#FF7E1B] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[normal] rounded-[6px] bg-[#FFEEE2] px-2 py-1 mb-[5px] ml-[15px]">
                   50%
                 </h2>
               </div>
-              <p className="text-decoration: line-through text-[#B6BCC8] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px] mt-[15px] ml-[90px]">
+              <p className="text-decoration: line-through text-[#B6BCC8] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px] mt-[15px] ">
                 $250.00
               </p>
             </div>
           </div>
         </section>
       </main>
+      <PriceCalc price={price} setPrice={setPrice} />
     </>
   );
 }
