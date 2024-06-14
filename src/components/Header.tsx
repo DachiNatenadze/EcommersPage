@@ -7,12 +7,12 @@ import MainPage from "./MainPage";
 import Cart from "./Cart";
 
 export default function Header({
-  qnty,
-  setQnty,
   price,
   setPrice,
   show,
   setShow,
+  cartShowen,
+  setCartShowen,
 }: {
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
@@ -20,21 +20,26 @@ export default function Header({
   setShow: React.Dispatch<React.SetStateAction<number>>;
   price: number;
   setPrice: React.Dispatch<React.SetStateAction<number>>;
+  cartShowen: boolean;
+  setCartShowen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   return (
     <>
-      <main>
         <header>
           <div className="flex px-6 py-6 justify-between items-center">
             <div className="flex w-fit gap-4 items-center justify-center">
               <img className="h-[15px]" src={BurgerIcon} alt="BurgerIcon" />
               <img src={Logo} alt="SiteLogo" />
             </div>
+
             <div className="flex w-fit gap-[25px]">
               <img
                 className="w-[20px] h-[20px]"
                 src={CartImg}
                 alt="Icon of ShopCart"
+                onClick={() => {
+                  setCartShowen(!cartShowen);
+                }}
               />
               {show !== 0 ? (
                 <div className="absolute right-[65px] top-5">
@@ -53,9 +58,7 @@ export default function Header({
             </div>
           </div>
         </header>
-        <Cart show={show} setShow={setShow} price={price} setPrice={setPrice} />
-        <MainPage price={price} setPrice={setPrice} />
-      </main>
+
     </>
   );
 }

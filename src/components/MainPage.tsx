@@ -7,23 +7,24 @@ import previous from "/public/icon-previous.svg";
 import NextPic from "/public/icon-next.svg";
 import Zoomedimage from "./Zoomedimage";
 import PriceCalc from "./PriceCalc";
+import Cart from "./Cart";
 
 const imgs = [ShoeThumbnail1, ShoeThumbnail2, ShoeThumbnail3, ShoeThumbnail4];
 
 export default function MainPage({
-  qnty,
-  setQnty,
   price,
   setPrice,
   show,
   setShow,
+  cartShowen,
+  setCartShowen,
 }: {
-  qnty: number;
-  setQnty: React.Dispatch<React.SetStateAction<number>>;
   show: number;
   setShow: React.Dispatch<React.SetStateAction<number>>;
   price: number;
   setPrice: React.Dispatch<React.SetStateAction<number>>;
+  cartShowen: boolean;
+  setCartShowen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -41,20 +42,30 @@ export default function MainPage({
 
   return (
     <>
+      {" "}
       <main className="w-full relative">
-        <section className="w-full overflow-hidden">
-          <div
-            style={{ transform: `translateX(-${slideWidth}%)` }}
-            className="img flex relative transition-all duration-700 ease-in-out min-w-screen max-w-screen bg-black">
-            {imgs.map((img, index) => (
-              <img
-                key={index}
-                className="min-w-screen max-w-screen object-cover cursor-pointer"
-                src={img}
-                alt={`Shoe Thumbnail ${index + 1}`}
-                onClick={() => openZoom(index)}
-              />
-            ))}
+        <section className="w-full">
+         {cartShowen &&  <Cart
+            show={show}
+            setShow={setShow}
+            price={price}
+            setPrice={setPrice}
+          />
+         }
+          <div className="overflow-hidden z-0">
+            <div
+              style={{ transform: `translateX(-${slideWidth}%)` }}
+              className="img flex relative transition-all duration-700 ease-in-out min-w-screen max-w-screen bg-black w-full">
+              {imgs.map((img, index) => (
+                <img
+                  key={index}
+                  className="min-w-screen max-w-screen object-cover cursor-pointer"
+                  src={img}
+                  alt={`Shoe Thumbnail ${index + 1}`}
+                  onClick={() => openZoom(index)}
+                />
+              ))}
+            </div>
           </div>
           <button
             className="absolute top-1/2 w-[40px] h-[40px] transform -translate-y-1/2 left-4 sm:left-6 lg:left-8 bg-white rounded-full flex items-center justify-center shadow-md"

@@ -2,24 +2,16 @@ import React from "react";
 import img1 from "/public/image-product-1.jpg";
 
 export default function cart({
-  qnty,
-  setQnty,
   price,
-  setPrice,
   show,
-  setShow,
 }: {
-  qnty: number;
-  setQnty: React.Dispatch<React.SetStateAction<number>>;
   show: number;
-  setShow: React.Dispatch<React.SetStateAction<number>>;
   price: number;
-  setPrice: React.Dispatch<React.SetStateAction<number>>;
 }) {
   console.log(show);
   return (
     <>
-      <main className="flex justify-center items-center">
+      <main className="flex justify-center items-center absolute left-[50%] translate-x-[-50%] z-50">
         <section>
           <header className="px-1 py-1">
             <div className="w-[360px] h-[256px] flex-shrink-0 rounded-[10px] bg-[#FFF] [box-shadow:0px_20px_50px_-20px_rgba(29,_32,_38,_0.50)]">

@@ -5,20 +5,13 @@ import Plus from "/public/icon-plus.svg";
 import Cart from "/public/icon-cart.svg";
 import Header from "./Header";
 
-interface PricePropsType {
-  price: number;
-  setPrice: React.Dispatch<React.SetStateAction<number>>;
-}
 export default function PriceCalc({
-  price,
-  setPrice,
+
   qnty,
-  setQnty,
   show,
+  setQnty,
   setShow,
 }: {
-  price: number;
-  setPrice: React.Dispatch<React.SetStateAction<number>>;
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
   show: number;
