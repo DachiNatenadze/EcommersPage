@@ -15,16 +15,15 @@ export default function PriceCalc({
   qnty,
   setQnty,
   show,
-  setShow
+  setShow,
 }: {
   price: number;
   setPrice: React.Dispatch<React.SetStateAction<number>>;
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
-  show: boolean,
-  setShow: React.Dispatch<React.SetStateAction<boolean>>
+  show: boolean;
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
-
   return (
     <>
       <main>
@@ -48,9 +47,11 @@ export default function PriceCalc({
               }}
             />
           </div>
-          <button className="rounded-[10px] bg-[#FF7E1B] [box-shadow:0px_20px_50px_-20px_#FF7E1B] w-[327px] h-[56px] flex-shrink-0 flex flex-row justify-center items-center gap-3" onClick={() =>{
-            setShow(true)
-          }}>
+          <button
+            className="rounded-[10px] bg-[#FF7E1B] [box-shadow:0px_20px_50px_-20px_#FF7E1B] w-[327px] h-[56px] flex-shrink-0 flex flex-row justify-center items-center gap-3"
+            onClick={() => {
+             setShow(qnty)
+            }}>
             <img
               className="w-[17.457px] h-[16px] fill-[#FFF]"
               src={Cart}

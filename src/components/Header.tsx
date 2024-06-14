@@ -4,6 +4,7 @@ import Logo from "/public/logo.svg";
 import CartImg from "/public/icon-cart.svg";
 import avatar from "/public/image-avatar.png";
 import MainPage from "./MainPage";
+import Cart from "./Cart";
 
 export default function Header({
   qnty,
@@ -31,7 +32,15 @@ export default function Header({
                 src={CartImg}
                 alt="Icon of ShopCart"
               />
-              <div className="">{show ? <span>{qnty}</span> : 0}</div>
+              {show !== 0 ? (
+                <div className="absolute right-[65px] top-5">
+                  <div className="rounded-[6.5px] bg-[#FF7E1B] w-[19px] h-[13px] flex-shrink-0 relative">
+                    <span className="text-[#FFF] font-[Kumbh_Sans] text-[10px] not-italic font-bold leading-[normal] absolute left-[7px] top-[-1px] bottom-5">
+                      {show}
+                    </span>
+                  </div>
+                </div>
+              ) : null}
               <img
                 className="w-[24px] h-[24px]"
                 src={avatar}
@@ -40,6 +49,7 @@ export default function Header({
             </div>
           </div>
         </header>
+        <Cart />
         <MainPage />
       </main>
     </>

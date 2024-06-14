@@ -5,7 +5,7 @@ import PriceCalc from "./components/PriceCalc";
 
 function App() {
   const [qnty, setQnty] = useState(Number);
-  const [show, setShow] = useState<boolean>(false);
+  const [show, setShow] = useState<number>(0);
   return (
     <>
       <Header qnty={qnty} setQnty={setQnty} show={show} setShow={setShow} />
