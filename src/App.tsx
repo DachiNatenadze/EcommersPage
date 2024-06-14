@@ -21,15 +21,16 @@ function App() {
         cartShowen={cartShowen}
         setCartShowen={setCartShowen}
       />
-      <MainPage
-        price={price}
-        setPrice={setPrice}
-        show={show}
-        setShow={setShow}
-        cartShowen={cartShowen}
-        setCartShowen={setCartShowen}
-      />
-      <PriceCalc qnty={qnty} setQnty={setQnty} show={show} setShow={setShow} />
+      <div>
+        <MainPage
+          price={price}
+          setPrice={setPrice}
+          show={show}
+          setShow={setShow}
+          cartShowen={cartShowen}
+          setCartShowen={setCartShowen}
+        />
+      </div>
     </>
   );
 }

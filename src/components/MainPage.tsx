@@ -12,6 +12,8 @@ import Cart from "./Cart";
 const imgs = [ShoeThumbnail1, ShoeThumbnail2, ShoeThumbnail3, ShoeThumbnail4];
 
 export default function MainPage({
+  qnty,
+  setQnty,
   price,
   setPrice,
   show,
@@ -19,6 +21,8 @@ export default function MainPage({
   cartShowen,
   setCartShowen,
 }: {
+  qnty: number;
+  setQnty: React.Dispatch<React.SetStateAction<number>>;
   show: number;
   setShow: React.Dispatch<React.SetStateAction<number>>;
   price: number;
@@ -42,24 +46,24 @@ export default function MainPage({
 
   return (
     <>
-      {" "}
-      <main className="w-full relative">
+      <main className="flex w-full relative">
         <section className="w-full">
-         {cartShowen &&  <Cart
-            show={show}
-            setShow={setShow}
-            price={price}
-            setPrice={setPrice}
-          />
-         }
-          <div className="overflow-hidden z-0">
+          {cartShowen && (
+            <Cart
+              show={show}
+              setShow={setShow}
+              price={price}
+              setPrice={setPrice}
+            />
+          )}
+          <div className=" overflow-hidden z-0 lg:overflow-hidden w-[445px] flex justify-center items-center">
             <div
               style={{ transform: `translateX(-${slideWidth}%)` }}
               className="img flex relative transition-all duration-700 ease-in-out min-w-screen max-w-screen bg-black w-full">
               {imgs.map((img, index) => (
                 <img
                   key={index}
-                  className="min-w-screen max-w-screen object-cover cursor-pointer"
+                  className="flex items-center justify-center min-w-screen max-w-screen object-cover cursor-pointer"
                   src={img}
                   alt={`Shoe Thumbnail ${index + 1}`}
                   onClick={() => openZoom(index)}
@@ -67,57 +71,66 @@ export default function MainPage({
               ))}
             </div>
           </div>
-          <button
-            className="absolute top-1/2 w-[40px] h-[40px] transform -translate-y-1/2 left-4 sm:left-6 lg:left-8 bg-white rounded-full flex items-center justify-center shadow-md"
-            onClick={() =>
-              setSelectedSlide((prev) => (prev <= 0 ? 3 : prev - 1))
-            }>
-            <img src={previous} alt="Previous" className="w-3 h-3" />
-          </button>
-          <button
-            className="absolute w-[40px] h-[40px] top-1/2 transform -translate-y-1/2 right-4 sm:right-6 lg:right-8 bg-white rounded-full flex items-center justify-center shadow-md"
-            onClick={() =>
-              setSelectedSlide((prev) => (prev >= 3 ? 0 : prev + 1))
-            }>
-            <img src={NextPic} alt="Next" className="w-3 h-3" />
-          </button>
+          <div className="flex lg:hidden">
+            <button
+              className="absolute top-1/2 w-[40px] h-[40px] transform -translate-y-1/2 left-4 sm:left-6 lg:left-8 bg-white rounded-full flex items-center justify-center shadow-md"
+              onClick={() =>
+                setSelectedSlide((prev) => (prev <= 0 ? 3 : prev - 1))
+              }>
+              <img src={previous} alt="Previous" className="w-3 h-3" />
+            </button>
+            <button
+              className="absolute w-[40px] h-[40px] top-1/2 transform -translate-y-1/2 right-4 sm:right-6 lg:right-8 bg-white rounded-full flex items-center justify-center shadow-md"
+              onClick={() =>
+                setSelectedSlide((prev) => (prev >= 3 ? 0 : prev + 1))
+              }>
+              <img src={NextPic} alt="Next" className="w-3 h-3" />
+            </button>
+          </div>
         </section>
-      </main>
-      {isZoomed && (
-        <Zoomedimage
-          isOpen={isZoomed}
-          selectedSlide={selectedSlide}
-          closeModal={closeModal}
-        />
-      )}
-      <main>
-        <section>
-          <div className="tittle px-6">
-            <h3 className="mt-[24px] mb-[19px] text-[#FF7E1B] font-[Kumbh_Sans] text-[12px] not-italic font-bold leading-[normal] tracking-[1.846px] uppercase">
+        {isZoomed && (
+          <Zoomedimage
+            isOpen={isZoomed}
+            selectedSlide={selectedSlide}
+            closeModal={closeModal}
+          />
+        )}
+        <section className="flex flex-col w-full justify-center items-start">
+          <div className="tittle px-6 w-full flex flex-row lg:flex flex-col items-center justify-center">
+            <h3 className="mt-[24px] mb-[19px] text-[#FF7E1B] font-[Kumbh_Sans] text-[12px] not-italic font-bold leading-[normal] tracking-[1.846px] uppercase lg:text-[14px]">
               Sneaker Company
             </h3>
-            <h2 className="mb-[15px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[32px]">
+            <h2
+              className="mb-[15px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[32px]
+             lg: max-w-[500px] text-[44px]">
               Fall Limited Edition Sneakers
             </h2>
-            <p className="text-[#69707D] font-[Kumbh_Sans] text-[15px] not-italic font-normal leading-[25px]">
+            <p className="text-[#69707D] font-[Kumbh_Sans] text-[15px] not-italic font-normal leading-[25px] lg:max-w-[400px] font-[17px]">
               These low-profile sneakers are your perfect casual wear companion.
               Featuring a durable rubber outer sole, they’ll withstand
               everything the weather can offer.
             </p>
-            <div className="price flex flex-row items-center justify-between">
-              <div className="flex flex-row items-end">
+            <div className="price flex flex-row items-center justify-between lg:flex items-end justify-end">
+              <div className="flex flex-col items-start">
                 <h2 className="mt-[10px] text-[#1D2026] font-[Kumbh_Sans] text-[28px] not-italic font-bold leading-[normal]">
                   ${price.toFixed(2)}
+                  <span className="text-[#FF7E1B] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[normal] rounded-[6px] bg-[#FFEEE2] px-2 py-1 mb-[5px] ml-[15px]">
+                    50%
+                  </span>
                 </h2>
-                <h2 className="text-[#FF7E1B] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[normal] rounded-[6px] bg-[#FFEEE2] px-2 py-1 mb-[5px] ml-[15px]">
-                  50%
-                </h2>
+
+                <p className="text-decoration: line-through text-[#B6BCC8] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px] mt-[15px] ">
+                  $250.00
+                </p>
               </div>
-              <p className="text-decoration: line-through text-[#B6BCC8] font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px] mt-[15px] ">
-                $250.00
-              </p>
             </div>
           </div>
+          <PriceCalc
+            qnty={qnty}
+            setQnty={setQnty}
+            show={show}
+            setShow={setShow}
+          />
         </section>
       </main>
     </>
