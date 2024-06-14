@@ -21,8 +21,8 @@ export default function PriceCalc({
   setPrice: React.Dispatch<React.SetStateAction<number>>;
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  show: number;
+  setShow: React.Dispatch<React.SetStateAction<number>>;
 }) {
   return (
     <>

@@ -10,10 +10,23 @@ import PriceCalc from "./PriceCalc";
 
 const imgs = [ShoeThumbnail1, ShoeThumbnail2, ShoeThumbnail3, ShoeThumbnail4];
 
-export default function MainPage() {
+export default function MainPage({
+  qnty,
+  setQnty,
+  price,
+  setPrice,
+  show,
+  setShow,
+}: {
+  qnty: number;
+  setQnty: React.Dispatch<React.SetStateAction<number>>;
+  show: number;
+  setShow: React.Dispatch<React.SetStateAction<number>>;
+  price: number;
+  setPrice: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const [selectedSlide, setSelectedSlide] = useState(0);
   const [isZoomed, setIsZoomed] = useState(false);
-  const [price, setPrice] = useState(125);
 
   const openZoom = (index) => {
     setSelectedSlide(index);

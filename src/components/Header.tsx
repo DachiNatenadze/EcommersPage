@@ -9,13 +9,17 @@ import Cart from "./Cart";
 export default function Header({
   qnty,
   setQnty,
+  price,
+  setPrice,
   show,
   setShow,
 }: {
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
-  show: boolean;
-  setShow: React.Dispatch<React.SetStateAction<boolean>>;
+  show: number;
+  setShow: React.Dispatch<React.SetStateAction<number>>;
+  price: number;
+  setPrice: React.Dispatch<React.SetStateAction<number>>;
 }) {
   return (
     <>
@@ -49,8 +53,8 @@ export default function Header({
             </div>
           </div>
         </header>
-        <Cart />
-        <MainPage />
+        <Cart show={show} setShow={setShow} price={price} setPrice={setPrice} />
+        <MainPage price={price} setPrice={setPrice} />
       </main>
     </>
   );
