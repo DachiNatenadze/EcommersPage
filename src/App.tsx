@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import { useState } from "react";
 import PriceCalc from "./components/PriceCalc";
 import MainPage from "./components/MainPage";
+import { HashRouter } from "react-router-dom";
 
 function App() {
   const [qnty, setQnty] = useState(Number);
@@ -11,28 +12,30 @@ function App() {
   const [cartShowen, setCartShowen] = useState<boolean>(false);
   return (
     <>
-      <Header
-        qnty={qnty}
-        setQnty={setQnty}
-        show={show}
-        setShow={setShow}
-        price={price}
-        setPrice={setPrice}
-        cartShowen={cartShowen}
-        setCartShowen={setCartShowen}
-      />
-      <div>
-        <MainPage
+      <HashRouter>
+        <Header
           qnty={qnty}
           setQnty={setQnty}
-          price={price}
-          setPrice={setPrice}
           show={show}
           setShow={setShow}
+          price={price}
+          setPrice={setPrice}
           cartShowen={cartShowen}
           setCartShowen={setCartShowen}
         />
-      </div>
+        <div>
+          <MainPage
+            qnty={qnty}
+            setQnty={setQnty}
+            price={price}
+            setPrice={setPrice}
+            show={show}
+            setShow={setShow}
+            cartShowen={cartShowen}
+            setCartShowen={setCartShowen}
+          />
+        </div>
+      </HashRouter>
     </>
   );
 }
