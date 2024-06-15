@@ -23,6 +23,8 @@ function App() {
       />
       <div>
         <MainPage
+          qnty={qnty}
+          setQnty={setQnty}
           price={price}
           setPrice={setPrice}
           show={show}
