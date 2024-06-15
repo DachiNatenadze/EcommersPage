@@ -11,6 +11,11 @@ export default function Zoomedimage({
   selectedSlide,
   closeModal,
   display,
+}: {
+  isOpen: boolean;
+  selectedSlide: number;
+  closeModal: () => void;
+  display: boolean;
 }) {
   const [currentSlide, setCurrentSlide] = useState(selectedSlide);
 

@@ -1,17 +1,11 @@
 import React from "react";
 import img1 from "/public/image-product-1.jpg";
 
-export default function cart({
-  price,
-  show,
-}: {
-  show: number;
-  price: number;
-}) {
+export default function cart({ price, show }: { show: number; price: number }) {
   console.log(show);
   return (
     <>
-      <main className="flex justify-center items-center absolute left-[50%] translate-x-[-50%] z-50 lg:left-[85%] lg:top-[8%]">
+      <main className="flex justify-center items-center absolute left-[50%] translate-x-[-50%] z-50 lg:left-[85%] lg:top-[8%] ">
         <section>
           <header className="px-1 py-1">
             <div className="w-[360px] h-[256px] flex-shrink-0 rounded-[10px] bg-[#FFF] [box-shadow:0px_20px_50px_-20px_rgba(29,_32,_38,_0.50)]">
@@ -19,7 +13,7 @@ export default function cart({
                 Cart
               </h2>
               {show === 0 ? (
-                <span className="flex items-center justify-center mt-[70px] text-[#69707D] text-center font-[Kumbh_Sans] text-[16px] not-italic font-bold leading-[26px]">
+                <span className="flex items-center justify-center mt-[70px] text-[#69707D] text-center font-[Kumbh_Sans] text-[16px] not-italic leading-[26px]">
                   Your cart is empty.
                 </span>
               ) : (
