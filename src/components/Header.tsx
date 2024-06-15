@@ -7,9 +7,7 @@ import Cart from "./Cart";
 
 export default function Header({
   price,
-  setPrice,
   show,
-  setShow,
   cartShowen,
   setCartShowen,
 }: {
@@ -47,12 +45,7 @@ export default function Header({
           <div className="flex w-fit gap-[25px] items-center justify-center">
             {cartShowen && (
               <div className="lg:block hidden">
-                <Cart
-                  show={show}
-                  setShow={setShow}
-                  price={price}
-                  setPrice={setPrice}
-                />
+                <Cart show={show} price={price} />
               </div>
             )}
             <img

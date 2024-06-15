@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/Header";
 import { useState } from "react";
-import PriceCalc from "./components/PriceCalc";
 import MainPage from "./components/MainPage";
 import { HashRouter } from "react-router-dom";
 

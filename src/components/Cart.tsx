@@ -1,4 +1,3 @@
-import React from "react";
 import img1 from "/public/image-product-1.jpg";
 
 export default function cart({ price, show }: { show: number; price: number }) {
