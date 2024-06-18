@@ -3,8 +3,6 @@ import Header from "./components/Header";
 import { useState } from "react";
 import MainPage from "./components/MainPage";
 import { HashRouter } from "react-router-dom";
-import { Analytics } from "@vercel/analytics/react";
-
 function App() {
   const [qnty, setQnty] = useState(Number);
   const [show, setShow] = useState<number>(0);
@@ -35,7 +33,6 @@ function App() {
             setCartShowen={setCartShowen}
           />
         </div>
-        <Analytics />
       </HashRouter>
     </>
   );

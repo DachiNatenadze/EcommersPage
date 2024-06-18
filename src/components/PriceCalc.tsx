@@ -1,7 +1,7 @@
 
-import Minus from "/public/icon-minus.svg";
-import Plus from "/public/icon-plus.svg";
-import Cart from "/public/icon-cart.svg";
+import Minus from "/icon-minus.svg";
+import Plus from "/icon-plus.svg";
+import Cart from "/icon-cart.svg";
 export default function PriceCalc({
   qnty,
   setQnty,

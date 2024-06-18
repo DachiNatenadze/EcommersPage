@@ -1,4 +1,4 @@
-import img1 from "git /public/image-product-1.jpg";
+import img1 from "/image-product-1.jpg";
 
 export default function cart({ price, show }: { show: number; price: number }) {
   console.log(show);

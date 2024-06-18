@@ -1,8 +1,8 @@
 import React from "react";
-import BurgerIcon from "/public/icon-menu.svg";
-import Logo from "/public/logo.svg";
-import CartImg from "/public/icon-cart.svg";
-import avatar from "/public/image-avatar.png";
+import BurgerIcon from "/icon-menu.svg";
+import Logo from "/logo.svg";
+import CartImg from "/icon-cart.svg";
+import avatar from "/image-avatar.png";
 import Cart from "./Cart";
 
 export default function Header({

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import ShoeThumbnail1 from "/public/image-product-1.jpg";
-import ShoeThumbnail2 from "/public/image-product-2.jpg";
-import ShoeThumbnail3 from "/public/image-product-3.jpg";
-import ShoeThumbnail4 from "/public/image-product-4.jpg";
-import previous from "/public/icon-previous.svg";
-import NextPic from "/public/icon-next.svg";
+import ShoeThumbnail1 from "/image-product-1.jpg";
+import ShoeThumbnail2 from "/image-product-2.jpg";
+import ShoeThumbnail3 from "/image-product-3.jpg";
+import ShoeThumbnail4 from "/image-product-4.jpg";
+import previous from "/icon-previous.svg";
+import NextPic from "/icon-next.svg";
 import Zoomedimage from "./Zoomedimage";
 import PriceCalc from "./PriceCalc";
 import Cart from "./Cart";
