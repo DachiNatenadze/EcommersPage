@@ -57,7 +57,7 @@ export default function Header({
               }}
             />
             {show !== 0 ? (
-              <div className="absolute right-[65px] top-5 lg:right-[250px] max-lg:hiddenlg:top-8">
+              <div className="absolute right-[65px] top-5 lg:right-[250px] max-lg:hidden lg:top-8">
                 <div className="rounded-[6.5px] bg-[#FF7E1B] w-[19px] h-[13px] flex-shrink-0 relative">
                   <span className="text-[#FFF] font-[Kumbh_Sans] text-[10px] not-italic leading-[normal] absolute left-[7px] top-[-1px] bottom-5">
                     {show}

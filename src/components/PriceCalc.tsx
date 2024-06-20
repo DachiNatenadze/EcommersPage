@@ -1,7 +1,8 @@
-
+import React from "react";
 import Minus from "/icon-minus.svg";
 import Plus from "/icon-plus.svg";
 import Cart from "/icon-cart.svg";
+
 export default function PriceCalc({
   qnty,
   setQnty,
@@ -9,9 +10,14 @@ export default function PriceCalc({
 }: {
   qnty: number;
   setQnty: React.Dispatch<React.SetStateAction<number>>;
-  show: number;
   setShow: React.Dispatch<React.SetStateAction<number>>;
 }) {
+  const handleDecrement = () => {
+    // Ensure qnty doesn't go below 0
+    if (qnty > 0) {
+      setQnty(qnty - 1);
+    }
+  };
 
   return (
     <>
@@ -19,13 +25,7 @@ export default function PriceCalc({
         <section className="flex flex-col items-center justify-start mt-[27px] lg:items-start lg:justify-start">
           <div className="lg:flex lg:flex-row">
             <div className="flex flex-row items-center justify-between w-[327px] h-[56px] flex-shrink-0 rounded-[10px] bg-[#F6F8FD] mb-[20px]  lg:flex lg::flex-row lg:w-[170px] lg:mr-[15px]">
-              <img
-                src={Minus}
-                alt=""
-                onClick={() => {
-                  setQnty(qnty - 1);
-                }}
-              />
+              <img src={Minus} alt="" onClick={handleDecrement} />
               <h2 className="text-[#1D2026] text-center font-[Kumbh_Sans] text-[16px] not-italic leading-[normal]">
                 {qnty}
               </h2>
@@ -48,7 +48,7 @@ export default function PriceCalc({
                 alt="Cart"
               />
               <h2 className="text-[#FFF] font-[Kumbh_Sans] text-[16px] not-italic leading-[normal]">
-                Add to card
+                Add to cart
               </h2>
             </button>
           </div>
