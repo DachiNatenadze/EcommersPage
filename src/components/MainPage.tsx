@@ -167,7 +167,6 @@ export default function MainPage({
             <PriceCalc
               qnty={qnty}
               setQnty={setQnty}
-              show={show}
               setShow={setShow}
             />
           </div>
